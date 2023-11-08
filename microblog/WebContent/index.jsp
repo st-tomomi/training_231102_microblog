@@ -8,5 +8,10 @@
 </head>
 <body>
 <h1>What's up?</h1>
+<form action="/microblog/Login" method="post">
+user name : <input type="text" name="name"><br>
+password : <input type="password" name="pass"><br>
+<input type="submit" value="login">
+</form>
 </body>
 </html>
