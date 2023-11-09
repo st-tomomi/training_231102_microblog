@@ -2,13 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ page import="model.User, model.Post, java.util.List" %>
 <%
-	//ユーザ情報取得
-	User loginUser = (User) session.getAttribute("loginUser");
-	//投稿リスト取得
-	List<Post> postList =
-		(List<Post>) request.getAttribute("postList");
-	//エラーメッセージ取得
-	String errorMsg = (String) request.getAttribute("errorMsg");
+//ユーザ情報取得
+User loginUser = (User) session.getAttribute("loginUser");
+//投稿リスト取得
+List<Post> postList =
+(List<Post>) request.getAttribute("postList");
+//エラーメッセージ取得
+String errorMsg = (String) request.getAttribute("errorMsg");
 %>
 <!DOCTYPE html>
 <html>

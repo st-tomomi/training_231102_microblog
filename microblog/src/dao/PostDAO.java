@@ -79,6 +79,8 @@ public class PostDAO {
 		PreparedStatement pstmt = null;
 
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(JDBC_URL, USER, PASS);
 			//SQL文の"?"に設定する値を指定
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, post.getUserName());
@@ -90,7 +92,7 @@ public class PostDAO {
 			if (result != 1) {
 				return false;
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 			return false;
 		}

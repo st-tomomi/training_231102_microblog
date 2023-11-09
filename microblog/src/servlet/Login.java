@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import model.LoginLogic;
 import model.User;
 
+//Login.javaの名前変えたい
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,8 +27,11 @@ public class Login extends HttpServlet {
 		String pass = request.getParameter("pass");
 
 		User user = new User(name, pass);
-
 		LoginLogic loginLogic = new LoginLogic();
+
+		//その場しのぎ用 user/1234ならログイン成功できる
+//		boolean isLogin = loginLogic.execute(user);
+
 		boolean isLogin = loginLogic.execute(user);
 
 		if(isLogin) {
