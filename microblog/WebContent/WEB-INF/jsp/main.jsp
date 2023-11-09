@@ -6,7 +6,7 @@
 	User loginUser = (User) session.getAttribute("loginUser");
 	//投稿リスト取得
 	List<Post> postList =
-		(List<Post>) application.getAttribute("postList");
+		(List<Post>) request.getAttribute("postList");
 	//エラーメッセージ取得
 	String errorMsg = (String) request.getAttribute("errorMsg");
 %>
@@ -33,7 +33,7 @@ user : <%= loginUser.getName() %>
 <p><%= errorMsg %></p>
 <% } %>
 <% for(Post post : postList) {%>
-	<p><%= post.getUserName() %> : <%= post.getText() %></p>
+<p><%= post.getUserName() %> : <%= post.getText() %></p>
 <% } %>
 </body>
 </html>
