@@ -29,16 +29,6 @@ public class Main extends HttpServlet {
 				new GetPostListLogic();
 		List<Post> postList = getPostListLogic.execute();
 		request.setAttribute("postList", postList);
-//		ServletContext application = this.getServletContext();
-//
-//		List<Post> postList =
-//				(List<Post>) application.getAttribute("postList");
-//
-//		//記事リストなければ生成
-//		if (postList == null) {
-//			postList = new ArrayList<>();
-//			application.setAttribute("postList", postList);
-//		}
 
 		//ユーザ情報取得
 		HttpSession session = request.getSession();
@@ -65,10 +55,6 @@ public class Main extends HttpServlet {
 
 		//テキストがnullでもなく長さ0でもないとき
 		if(text != null && text.length() != 0) {
-			//投稿リストを取得
-//			ServletContext application = this.getServletContext();
-//			List<Post> postList =
-//					(List<Post>) application.getAttribute("postList");
 
 			//ユーザ情報を取得
 			HttpSession session = request.getSession();
@@ -78,12 +64,7 @@ public class Main extends HttpServlet {
 			Post post = new Post(loginUser.getName(), text);
 			PostTextLogic postTextLogic = new PostTextLogic();
 			postTextLogic.execute(post);
-//			Post post = new Post(loginUser.getName(), text);
-//			PostTextLogic postTextLogic = new PostTextLogic();
-//			postTextLogic.execute(post, postList);
 
-			//投稿リストを保存
-//			application.setAttribute("postList", postList);
 		} else {
 			//エラーメッセージを保存
 			request.setAttribute("errorMsg", "This is a required field.");

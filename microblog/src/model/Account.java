@@ -11,12 +11,6 @@ public class Account {
 		this.userName = userName;
 		this.pass = pass;
 	}
-	//IDがあれば
-//	public Account(String userId, String userName, String pass) {
-//		this.userId = userId;
-//		this.userName = userName;
-//		this.pass = pass;
-//	}
 
 	public String getUserName() {
 		return userName;

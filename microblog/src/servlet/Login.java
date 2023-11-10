@@ -29,9 +29,6 @@ public class Login extends HttpServlet {
 		User user = new User(name, pass);
 		LoginLogic loginLogic = new LoginLogic();
 
-		//その場しのぎ用 user/1234ならログイン成功できる
-//		boolean isLogin = loginLogic.execute(user);
-
 		boolean isLogin = loginLogic.execute(user);
 
 		if(isLogin) {

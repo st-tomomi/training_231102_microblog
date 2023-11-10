@@ -17,10 +17,7 @@ public class AccountsDao {
 	private final String PASS = null;
 	Connection conn = null;
 
-//	public Account searchAccount(Login login) {
 	public Account searchAccount(User user) {
-//		String sql =
-//				"SELECT ID, NAME, TEXT FROM POST ORDER BY ID DESC";
 		String sql =
 				"SELECT NAME, PASS FROM USERS WHERE NAME = ? AND PASS = ?";
 		PreparedStatement pstmt = null;
