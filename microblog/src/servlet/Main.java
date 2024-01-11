@@ -81,5 +81,6 @@ public class Main extends HttpServlet {
 				request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);
 	}
+	//commitとpushの動作確認
 
 }
